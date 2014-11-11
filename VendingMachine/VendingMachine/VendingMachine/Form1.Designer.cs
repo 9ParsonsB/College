@@ -1,6 +1,6 @@
 ﻿namespace VendingMachine
 {
-    partial class Form1
+    partial class VendingMachine
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,300 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lstItems = new System.Windows.Forms.ListBox();
+            this.btnClr = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.menuBar = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pBox1 = new System.Windows.Forms.PictureBox();
+            this.pBox2 = new System.Windows.Forms.PictureBox();
+            this.pBox3 = new System.Windows.Forms.PictureBox();
+            this.pBox4 = new System.Windows.Forms.PictureBox();
+            this.pBox5 = new System.Windows.Forms.PictureBox();
+            this.pBox6 = new System.Windows.Forms.PictureBox();
+            this.pBox7 = new System.Windows.Forms.PictureBox();
+            this.pBox8 = new System.Windows.Forms.PictureBox();
+            this.pBox9 = new System.Windows.Forms.PictureBox();
+            this.lblCost = new System.Windows.Forms.Label();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.menuBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox9)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // lstItems
+            // 
+            this.lstItems.FormattingEnabled = true;
+            this.lstItems.Location = new System.Drawing.Point(321, 37);
+            this.lstItems.Name = "lstItems";
+            this.lstItems.Size = new System.Drawing.Size(120, 264);
+            this.lstItems.TabIndex = 1;
+            // 
+            // btnClr
+            // 
+            this.btnClr.Location = new System.Drawing.Point(447, 37);
+            this.btnClr.Name = "btnClr";
+            this.btnClr.Size = new System.Drawing.Size(75, 23);
+            this.btnClr.TabIndex = 2;
+            this.btnClr.Text = "Clear";
+            this.btnClr.UseVisualStyleBackColor = true;
+            this.btnClr.Click += new System.EventHandler(this.btnClr_Click);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(447, 66);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.TabIndex = 3;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            // 
+            // menuBar
+            // 
+            this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuBar.Location = new System.Drawing.Point(0, 0);
+            this.menuBar.Name = "menuBar";
+            this.menuBar.Size = new System.Drawing.Size(538, 24);
+            this.menuBar.TabIndex = 4;
+            this.menuBar.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.loadToolStripMenuItem,
+            this.logOutToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.newToolStripMenuItem.Text = "New";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logOutToolStripMenuItem.Text = "Log out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem1,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // helpToolStripMenuItem1
+            // 
+            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.helpToolStripMenuItem1.Text = "Help!";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // pBox1
+            // 
+            this.pBox1.InitialImage = null;
+            this.pBox1.Location = new System.Drawing.Point(12, 37);
+            this.pBox1.Name = "pBox1";
+            this.pBox1.Size = new System.Drawing.Size(92, 84);
+            this.pBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox1.TabIndex = 0;
+            this.pBox1.TabStop = false;
+            // 
+            // pBox2
+            // 
+            this.pBox2.Location = new System.Drawing.Point(110, 37);
+            this.pBox2.Name = "pBox2";
+            this.pBox2.Size = new System.Drawing.Size(92, 84);
+            this.pBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox2.TabIndex = 1;
+            this.pBox2.TabStop = false;
+            // 
+            // pBox3
+            // 
+            this.pBox3.Location = new System.Drawing.Point(208, 37);
+            this.pBox3.Name = "pBox3";
+            this.pBox3.Size = new System.Drawing.Size(92, 84);
+            this.pBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox3.TabIndex = 2;
+            this.pBox3.TabStop = false;
+            // 
+            // pBox4
+            // 
+            this.pBox4.Location = new System.Drawing.Point(12, 127);
+            this.pBox4.Name = "pBox4";
+            this.pBox4.Size = new System.Drawing.Size(92, 84);
+            this.pBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox4.TabIndex = 3;
+            this.pBox4.TabStop = false;
+            // 
+            // pBox5
+            // 
+            this.pBox5.Location = new System.Drawing.Point(110, 127);
+            this.pBox5.Name = "pBox5";
+            this.pBox5.Size = new System.Drawing.Size(92, 84);
+            this.pBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox5.TabIndex = 4;
+            this.pBox5.TabStop = false;
+            // 
+            // pBox6
+            // 
+            this.pBox6.Location = new System.Drawing.Point(208, 127);
+            this.pBox6.Name = "pBox6";
+            this.pBox6.Size = new System.Drawing.Size(92, 84);
+            this.pBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox6.TabIndex = 5;
+            this.pBox6.TabStop = false;
+            // 
+            // pBox7
+            // 
+            this.pBox7.Location = new System.Drawing.Point(12, 217);
+            this.pBox7.Name = "pBox7";
+            this.pBox7.Size = new System.Drawing.Size(92, 84);
+            this.pBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox7.TabIndex = 6;
+            this.pBox7.TabStop = false;
+            // 
+            // pBox8
+            // 
+            this.pBox8.Location = new System.Drawing.Point(110, 217);
+            this.pBox8.Name = "pBox8";
+            this.pBox8.Size = new System.Drawing.Size(92, 84);
+            this.pBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox8.TabIndex = 7;
+            this.pBox8.TabStop = false;
+            // 
+            // pBox9
+            // 
+            this.pBox9.Location = new System.Drawing.Point(208, 217);
+            this.pBox9.Name = "pBox9";
+            this.pBox9.Size = new System.Drawing.Size(92, 84);
+            this.pBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox9.TabIndex = 8;
+            this.pBox9.TabStop = false;
+            // 
+            // lblCost
+            // 
+            this.lblCost.AutoSize = true;
+            this.lblCost.Location = new System.Drawing.Point(448, 107);
+            this.lblCost.Name = "lblCost";
+            this.lblCost.Size = new System.Drawing.Size(46, 13);
+            this.lblCost.TabIndex = 9;
+            this.lblCost.Text = "Cost: £0";
+            // 
+            // lblCount
+            // 
+            this.lblCount.AutoSize = true;
+            this.lblCount.Location = new System.Drawing.Point(451, 127);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(44, 13);
+            this.lblCount.TabIndex = 10;
+            this.lblCount.Text = "Items: 0";
+            // 
+            // VendingMachine
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(538, 319);
+            this.Controls.Add(this.lblCount);
+            this.Controls.Add(this.lblCost);
+            this.Controls.Add(this.pBox9);
+            this.Controls.Add(this.pBox8);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.pBox7);
+            this.Controls.Add(this.btnClr);
+            this.Controls.Add(this.pBox6);
+            this.Controls.Add(this.lstItems);
+            this.Controls.Add(this.pBox5);
+            this.Controls.Add(this.pBox4);
+            this.Controls.Add(this.menuBar);
+            this.Controls.Add(this.pBox3);
+            this.Controls.Add(this.pBox1);
+            this.Controls.Add(this.pBox2);
+            this.MainMenuStrip = this.menuBar;
+            this.Name = "VendingMachine";
+            this.Text = "Vending Machine";
+            this.menuBar.ResumeLayout(false);
+            this.menuBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox9)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox lstItems;
+        private System.Windows.Forms.Button btnClr;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.MenuStrip menuBar;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pBox1;
+        private System.Windows.Forms.PictureBox pBox2;
+        private System.Windows.Forms.PictureBox pBox3;
+        private System.Windows.Forms.PictureBox pBox4;
+        private System.Windows.Forms.PictureBox pBox5;
+        private System.Windows.Forms.PictureBox pBox6;
+        private System.Windows.Forms.PictureBox pBox7;
+        private System.Windows.Forms.PictureBox pBox8;
+        private System.Windows.Forms.PictureBox pBox9;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.Label lblCost;
+        private System.Windows.Forms.Label lblCount;
     }
 }
 
