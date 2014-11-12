@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VendingMachine
+namespace VendingMachineTask
 {
     public partial class LoginForm : Form
     {
@@ -36,8 +36,8 @@ namespace VendingMachine
             {
                 if (txtPswd.Text == Config.Pass)
                 {
-                    VendingMachine VendingMachine = new VendingMachine();
-                    //VendingMachine.Init();
+                    VendingMachine VendingMachine = new VendingMachine(this);
+                    VendingMachine.Init();
                     VendingMachine.Show();
                     this.Hide();
                 }

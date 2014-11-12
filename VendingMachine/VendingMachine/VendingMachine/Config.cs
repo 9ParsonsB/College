@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VendingMachine
+namespace VendingMachineTask
 {
     static class Config
     {
-        public static List<VendingItem> ItemsBought { get; set; }
-        public static List<VendingItem> Items { get; set; }
+        //public static List<VendingItem> ItemsBought { get; set; }
+        //public static List<VendingItem> Items { get; set; }
 
         public static string User
         {
