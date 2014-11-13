@@ -6,15 +6,22 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace VendingMachineTask
 {
     public partial class LoginForm : Form
     {
+        
+        
         public LoginForm()
         {
             InitializeComponent();
+            
         }
 
         private void Login(object sender, KeyPressEventArgs e)
@@ -36,14 +43,13 @@ namespace VendingMachineTask
             {
                 if (txtPswd.Text == Config.Pass)
                 {
+
                     VendingMachine VendingMachine = new VendingMachine(this);
-                    VendingMachine.Init();
-                    VendingMachine.Show();
                     this.Hide();
+                    
                 }
             }
         }
-
 
     }
 }

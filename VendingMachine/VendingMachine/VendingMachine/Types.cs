@@ -1,24 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
+using System.Globalization;
+using System.Threading;
+using System.Windows.Forms;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace VendingMachineTask
 {
-    class VendingItem
+    public class VendingItem
     {
         public string Name;
         public decimal Price;
-        public Image Image;
+        public string URL;
 
-        public VendingItem(string _name, decimal _price, Image _image)
+        public VendingItem(string _name, decimal _price, string _url)
         {
             Name = _name;
             Price = _price;
-            Image = _image;
+            URL = _url;
         }
+
+    }
+
+    public class WorkerReturnType
+    {
+        public List<VendingItem> Items;
+        public List<PictureBox> picList;
+        public List<VendingItem> ItemsBought;
+        public List<ToolTip> pBoxTip;
 
     }
 }

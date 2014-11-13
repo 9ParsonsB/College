@@ -18,3 +18,4 @@ C:\Users\MinijackB\Documents\Visual Studio 2013\Projects\College.git\VendingMach
 C:\Users\MinijackB\Documents\Visual Studio 2013\Projects\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.VendingMachine.resources
 C:\Users\MinijackB\Documents\Visual Studio 2013\Projects\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.LoginForm.resources
 C:\Users\MinijackB\Documents\Visual Studio 2013\Projects\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Properties.Resources.resources
+C:\Users\MinijackB\Documents\Visual Studio 2013\Projects\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Loading.resources
