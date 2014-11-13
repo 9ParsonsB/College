@@ -24,7 +24,7 @@ namespace VendingMachineTask
         public void Init()
         {
             Progress = 0;
-            Incriment = 1;
+            Incriment = 5;
             timer1.Enabled = true;
             this.Show();
         }

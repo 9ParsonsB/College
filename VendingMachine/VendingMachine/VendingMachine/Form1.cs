@@ -53,12 +53,44 @@ namespace VendingMachineTask
 
         private void worker_DoWork(object sender, DoWorkEventArgs e)
         {
-            WorkerReturnType re = Init();
+            try
+            {
+                WorkerReturnType re = Init();
 
-            Config.picList = re.picList;
-            Config.pBoxTip = re.pBoxTip;
-            Config.ItemsBought = re.ItemsBought;
-            Config.Items = re.Items;
+                Config.picList = re.picList;
+                Config.pBoxTip = re.pBoxTip;
+                Config.ItemsBought = re.ItemsBought;
+                Config.Items = re.Items;
+            }//*/
+            catch (System.Net.WebException)
+            {
+                Config.isLoading = false;
+                MessageBox.Show("Error, You MUST be connected to the internet to download content", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Stop, MessageBoxDefaultButton.Button1);
+                Config.Items = new List<VendingItem>();
+                Config.picList = new List<PictureBox>();
+                Config.ItemsBought = new List<VendingItem>();
+                Config.pBoxTip = new List<ToolTip>();
+                Config.picList.Add(pBox1);
+                Config.picList.Add(pBox2);
+                Config.picList.Add(pBox3);
+                Config.picList.Add(pBox4);
+                Config.picList.Add(pBox5);
+                Config.picList.Add(pBox6);
+                Config.picList.Add(pBox7);
+                Config.picList.Add(pBox8);
+                Config.picList.Add(pBox9);
+                Random Rnd = new Random();
+                Config.Items.Add(new VendingItem("defualt", 0.0m, "C:/ProgramData/Microsoft/User Account Pictures/Default Pictures/usertile"+ Rnd.Next(10,44).ToString()+".bmp"));
+
+                for (var i = 0; i < (Config.Items.Count); i++)
+            {
+
+                Config.picList[i].Image = Image.FromFile(Config.Items[i].URL);
+
+                Config.pBoxTip.Add(new ToolTip());
+            }
+
+            }
         }
 
         private void worker_RunWorkerCompleted(object sender,
@@ -102,7 +134,7 @@ namespace VendingMachineTask
             Items.Add(new VendingItem("Preserver", 2.13m, "http://puu.sh/cOaDC/2be0641566.png"));
             Items.Add(new VendingItem("Cube", 5.15m, "http://puu.sh/cOaEV/9d6c8f93ab.png"));
             Items.Add(new VendingItem("Fez", 0.78m, "http://puu.sh/cOaFe/1d07104990.png"));
-
+            Items.Add(new VendingItem("Heart", 0.25m, "http://puu.sh/cOuHp/059a3fe094.png"));
 
             
 
@@ -165,7 +197,6 @@ namespace VendingMachineTask
 
             WorkerReturnType re = new WorkerReturnType();
 
-            MessageBox.Show("done!");
             re.Items = Items;
             re.ItemsBought = ItemsBought;
             re.pBoxTip = pBoxTip;
@@ -447,6 +478,11 @@ namespace VendingMachineTask
             }
 
             Console.WriteLine("no longer loading file!");
+        }
+
+        private void btnBuy_Click(object sender, EventArgs e)
+        {
+            clearItems();
         }
 
     }
