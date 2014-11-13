@@ -21,7 +21,7 @@ namespace VendingMachineTask
         }
         public void Init()
         {
-            timer1.Enabled = true;
+            timer1.Enabled = true; // start timer
             this.Show();
         }
 
@@ -30,12 +30,12 @@ namespace VendingMachineTask
             //label1.Text = Config.progress.ToString();
 
 
-            PbarLoading.Value = Config.progress;
+            PbarLoading.Value = Config.progress; // get progress value
 
-            if (!(Config.isLoading))
+            if (!(Config.isLoading)) // if loading is done
             {
-                Sender.Show();
-                this.Close();
+                Sender.Show(); // show the vending machine form
+                this.Close(); // close current form
             }
         }
 

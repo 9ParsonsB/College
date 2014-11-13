@@ -40,12 +40,15 @@ namespace VendingMachineTask
 
 
 
-            
-            worker.DoWork += worker_DoWork;
-            worker.RunWorkerCompleted += worker_RunWorkerCompleted;
-            worker.RunWorkerAsync();
 
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB");
+            // setup background worker
+
+            worker.DoWork += worker_DoWork; // events for background worker
+            worker.RunWorkerCompleted += worker_RunWorkerCompleted;
+
+            worker.RunWorkerAsync(); // start worker
+
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB"); // set currency
 
             
         }
@@ -56,20 +59,24 @@ namespace VendingMachineTask
             {
                 WorkerReturnType re = Init();
 
-                Config.picList = re.picList;
+                Config.picList = re.picList; // set values from return type
                 Config.pBoxTip = re.pBoxTip;
                 Config.ItemsBought = re.ItemsBought;
                 Config.Items = re.Items;
+
             }//*/
-            catch (System.Net.WebException)
+            catch (System.Net.WebException) // if cannot connect to the internet
             {
-                Config.isLoading = false;
-                MessageBox.Show("Error, You MUST be connected to the internet to download content", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Stop, MessageBoxDefaultButton.Button1);
+                Config.isLoading = false; // stop loading form
+                MessageBox.Show("Error, You MUST be connected to the internet to download content", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Stop, MessageBoxDefaultButton.Button1); // tell user that there is no internet connection
+
+                // create instance of lists
                 Config.Items = new List<VendingItem>();
                 Config.picList = new List<PictureBox>();
                 Config.ItemsBought = new List<VendingItem>();
                 Config.pBoxTip = new List<ToolTip>();
-                Config.picList.Add(pBox1);
+
+                Config.picList.Add(pBox1); // add pictureboxs to List
                 Config.picList.Add(pBox2);
                 Config.picList.Add(pBox3);
                 Config.picList.Add(pBox4);
@@ -78,15 +85,19 @@ namespace VendingMachineTask
                 Config.picList.Add(pBox7);
                 Config.picList.Add(pBox8);
                 Config.picList.Add(pBox9);
+
+                
                 Random Rnd = new Random();
+
+                // choose a random image from windows default pictures and add it as an item
                 Config.Items.Add(new VendingItem("defualt", 0.0m, "C:/ProgramData/Microsoft/User Account Pictures/Default Pictures/usertile"+ Rnd.Next(10,44).ToString()+".bmp"));
 
-                for (var i = 0; i < (Config.Items.Count); i++)
+                for (var i = 0; i < (Config.Items.Count); i++) // for each of the items
             {
 
-                Config.picList[i].Image = Image.FromFile(Config.Items[i].URL);
+                Config.picList[i].Image = Image.FromFile(Config.Items[i].URL); // add the image
 
-                Config.pBoxTip.Add(new ToolTip());
+                Config.pBoxTip.Add(new ToolTip()); // add the tool tip
             }
 
             }
@@ -102,14 +113,14 @@ namespace VendingMachineTask
                                                RunWorkerCompletedEventArgs e)
         {
 
-            for (var i = 0; i < (Config.Items.Count); i++)
+            for (var i = 0; i < (Config.Items.Count); i++) // for each of the items
             {
 
-                Config.pBoxTip[i].SetToolTip(Config.picList[i], Config.Items[i].Name + ": " + string.Format("{0:C}", Config.Items[i].Price));
+                Config.pBoxTip[i].SetToolTip(Config.picList[i], Config.Items[i].Name + ": " + string.Format("{0:C}", Config.Items[i].Price)); // set tooltip
             }
 
 
-            Config.isLoading = false;
+            Config.isLoading = false; // stop loadingform
         }
 
 
@@ -117,20 +128,21 @@ namespace VendingMachineTask
 
         public void LoadImages(VendingMachine Sender)
         {
-            Loading LoadingForm = new Loading(Sender);
-            LoadingForm.Show();
+            Loading LoadingForm = new Loading(Sender); // create instance of loadingform
+            LoadingForm.Show(); // show loading form
         }
 
         public WorkerReturnType Init()
         {
-            Config.progress = 0;
+            Config.progress = 0; // set progress to 0
 
-            List<VendingItem> Items = new List<VendingItem>();
-            List<PictureBox> picList = new List<PictureBox>();
-            List<VendingItem> ItemsBought = new List<VendingItem>();
-            List<ToolTip> pBoxTip = new List<ToolTip>();
+            List<VendingItem> Items = new List<VendingItem>(); // array of items to choose from
+            List<PictureBox> picList = new List<PictureBox>(); //array of pictureboxes (temporary)
+            List<VendingItem> ItemsBought = new List<VendingItem>(); // array of items bought
+            List<ToolTip> pBoxTip = new List<ToolTip>(); // array of tooltips
 
 
+            // add items you can buy to the array, including their price and image location (URL)
             Items.Add(new VendingItem("Cake", 3.5m, "http://puu.sh/cOaEs/0b6478f1a5.png"));
             Items.Add(new VendingItem("Potato", 1.24m, "http://puu.sh/cObfS/7cd34d8793.png"));
             Items.Add(new VendingItem("Bird", 2.8m, "http://puu.sh/cOaCf/7a9526184d.png"));
@@ -142,7 +154,7 @@ namespace VendingMachineTask
             Items.Add(new VendingItem("Heart", 0.25m, "http://puu.sh/cOuHp/059a3fe094.png"));
 
             
-
+            // add pictureboxes to temporary array
             picList.Add(pBox1);
             picList.Add(pBox2);
             picList.Add(pBox3);
@@ -153,21 +165,21 @@ namespace VendingMachineTask
             picList.Add(pBox8);
             picList.Add(pBox9);
 
-            for (var i = 0; i < (Items.Count); i++)
+            for (var i = 0; i < (Items.Count); i++) // for each entry in the item array
             {
 
-                picList[i].Load(Items[i].URL);
-                Config.progress += 10;
-                pBoxTip.Add(new ToolTip());
+                picList[i].Load(Items[i].URL); // load the image onto the picture box
+                Config.progress += 10; // add to progress (for loadin form)
+                pBoxTip.Add(new ToolTip()); // create empty tooltip
             }
 
 
-            for (var i = 0; i < picList.Count(); i++)
+            for (var i = 0; i < picList.Count(); i++) // loop through the array of pictureboxes
             {
                 switch (i)
                 {
                     case 1:
-                        pBox1 = picList[i];
+                        pBox1 = picList[i]; // set each picturebox to each element in the array of pictureboxes
                         break;
                     case 2:
                         pBox2 = picList[i];
@@ -198,39 +210,40 @@ namespace VendingMachineTask
             }
             Config.progress += 10;
 
-            Config.isLoading = false;
+            Config.isLoading = false; // tell the loading form to stop
 
-            WorkerReturnType re = new WorkerReturnType();
+            WorkerReturnType re = new WorkerReturnType(); // create return type
 
             re.Items = Items;
             re.ItemsBought = ItemsBought;
             re.pBoxTip = pBoxTip;
             re.picList = picList;
+
             return re;
         }
 
         private void updateList()
         {
-            this.lstItems.Items.Clear();
-            this.lstItems.Columns.Clear();
-            TotalCost = 0.0m;
-            int i = 0;
+            this.lstItems.Items.Clear(); // clear the items in the listbox
+            this.lstItems.Columns.Clear(); // clear columns in the listbox
+            TotalCost = 0.0m; // clear total cost
+            int i = 0; // reset iterator
 
-            lstItems.Columns.Add("Name");
+            lstItems.Columns.Add("Name"); // add columns
             lstItems.Columns.Add("Price");
 
-            foreach (VendingItem x in Config.ItemsBought)
+            foreach (VendingItem x in Config.ItemsBought) // for each of the items bought
             {
                 var item = new ListViewItem(new[] { x.Name, String.Format("{0:c}",  x.Price) });
 
-                lstItems.Items.Add(item);
-                
-                i++;
-                TotalCost += x.Price;
+                lstItems.Items.Add(item); // add the items to the list box
+
+                i++; // incriment iterator
+                TotalCost += x.Price; // add to total price
 
             }
 
-            lblCost.Text = String.Format("Cost: £ {0}", String.Format("{0:c}",TotalCost));
+            lblCost.Text = String.Format("Cost: £ {0}", String.Format("{0:c}",TotalCost)); // set labels so user knows the total cost & items
             lblCount.Text = String.Format("Items: {0}", i.ToString());
 
         }
@@ -240,57 +253,32 @@ namespace VendingMachineTask
         private void addItem(int x)
         {
             x = x - 1; // arrays start at 0, not 1
-            //x = findItem(x);
-            if (x == -1)
+
+            if (x == -1) // if an error occurs
                 Console.WriteLine("cannot find item by image!");
             else
             {
-                Config.ItemsBought.Add(Config.Items[x]);
-                updateList();
+                Config.ItemsBought.Add(Config.Items[x]); // add the items to the list of items bought
+                updateList(); // update the list of items
             }
         }
 
-        /*private int findItem(int x)
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e) // logout button handler
         {
-            foreach (var i in picList.ToArray())
-            {
-                if (x < Items.Count())
-                    if (i.Image == Items[x].Image)
-                        return x;
-            }
-                return -1;
-        }//*/
-    
-        private int findItem(string x)
-        {
-            int z = -1;
-            foreach (var i in Config.ItemsBought.ToArray())
-            {
-                z = -1;
-                if (i.Name == x)
-                {
-                    z++;
-                }
-            }
-            return z;
+            this.Close(); // close current window
+            Sender.Show(); // show the login form
         }
 
-        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnClr_Click(object sender, EventArgs e) // clear button
         {
-            this.Hide();
-            Login.Show();
-        }
-
-        private void btnClr_Click(object sender, EventArgs e)
-        {
-            clearItems();
-            updateList();
+            clearItems(); // clear bought item
+            updateList(); // update bought items list
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
             int delete = -1;
-            if (lstItems.SelectedItems.Count == 1)
+            if (lstItems.SelectedItems.Count == 1) // if you have an item selected in the listbox
             {
                 int itemIndex = lstItems.SelectedItems[0].Index;
                 Console.WriteLine(itemIndex);
@@ -300,19 +288,19 @@ namespace VendingMachineTask
                 Console.WriteLine("");
                 var z = 0;
 
-                foreach (var i in Config.ItemsBought)
+                foreach (var i in Config.ItemsBought) // for each of the items ought
                 {
-                    if (lstItems.SelectedItems[0].Index == z)
+                    if (lstItems.SelectedItems[0].Index == z) // if the index of the items selected is the same as the item being looped through
                     {
-                        Console.WriteLine("{0}: {1} | {2} HERE!!!!!!!", z, Config.ItemsBought[z].Name, lstItems.Items[z].Text);
-                        delete = z;
+                        Console.WriteLine("{0}: {1} | {2} HERE!!!!!!!", z, Config.ItemsBought[z].Name, lstItems.Items[z].Text); // debug table
+                        delete = z; // remember to delete this index
                     }
                     else
                     {
-                        Console.WriteLine("{0}: {1} | {2}", z, Config.ItemsBought[z].Name, lstItems.Items[z].Text);
+                        Console.WriteLine("{0}: {1} | {2}", z, Config.ItemsBought[z].Name, lstItems.Items[z].Text); // debug table
                     }
 
-                    z++;
+                    z++; // incriment iterator
                 }
                 Console.WriteLine("");
                 Console.WriteLine("---End Bought Table---");
@@ -320,26 +308,27 @@ namespace VendingMachineTask
                 
                 
             }
-            if (delete != -1)
-                Config.ItemsBought.RemoveAt(delete);
-            updateList();
+            if (delete != -1) // if we found the correct item to delete
+                Config.ItemsBought.RemoveAt(delete); // remove it from the array
+            updateList(); // update the list of items bought
         }
 
         private bool clearItems()
         {
-            if (Config.ItemsBought.Count() != 0)
+            if (Config.ItemsBought.Count() != 0) // if the amount of items bought is not 0
             {
+                // ask the user if they are sure that they want to delete the current order
                 if (MessageBox.Show("Are you sure you want to clear your current order?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    Config.ItemsBought = new List<VendingItem>();
-                    updateList();
+                    Config.ItemsBought = new List<VendingItem>();// if yes, create new instance of the array, overwriting the old one
+                    updateList(); // update the list of items bought
                     return true;
                 }
             }
             return false;
         }
 
-        private void pBox1_Click(object sender, EventArgs e)
+        private void pBox1_Click(object sender, EventArgs e) // picturebox click event handler
         {
             addItem(1);
         }
@@ -376,100 +365,100 @@ namespace VendingMachineTask
             addItem(9);
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
+        protected override void OnFormClosing(FormClosingEventArgs e) // if the user clicks the X button
         {
             base.OnFormClosing(e);
 
             if (e.CloseReason == CloseReason.WindowsShutDown) return;
 
-            Sender.Show();
-            Sender.Close();
+            Sender.Show(); // show the login form
            
         }
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newToolStripMenuItem_Click(object sender, EventArgs e) // handle new order button
         {
-            clearItems();
+            clearItems(); // clear bought items
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e) // save handler
         {
-            saveFile = new SaveFileDialog();
-            toSave = new List<string>();
+            saveFile = new SaveFileDialog(); // create saveFileDialog instance
+            toSave = new List<string>(); // list of lines to save to file
 
-            saveFile.FileName = "Vending Order.txt";
-            saveFile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFile.FileName = "Vending Order.txt"; // defualt file name
+            saveFile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"; // filter for save file dialog
 
-            if (saveFile.ShowDialog() == DialogResult.OK)
+            if (saveFile.ShowDialog() == DialogResult.OK) // prompt user for save location, if they press OK then
             {
-                foreach (var i in Config.ItemsBought)
+                foreach (var i in Config.ItemsBought) // for each of the items bought
                 {
-                    toSave.Add(i.Name + ": " + String.Format("{0:c}",i.Price));
+                    toSave.Add(i.Name + ": " + String.Format("{0:c}",i.Price)); // add it to the list of lines to be wrote to file
                 }
 
 
 
+                toSave.Add(""); // empty lines
                 toSave.Add("");
-                toSave.Add("");
-                toSave.Add(String.Format("Cost: £ {0}", String.Format("{0:c}",TotalCost)));
-                toSave.Add(String.Format("Items: {0}", Config.ItemsBought.Count().ToString()));
+                toSave.Add(String.Format("Cost: £ {0}", String.Format("{0:c}",TotalCost))); // add total cost
+                toSave.Add(String.Format("Items: {0}", Config.ItemsBought.Count().ToString())); // add number of items
 
-                File.WriteAllLines(saveFile.FileName, toSave.ToArray());
+                File.WriteAllLines(saveFile.FileName, toSave.ToArray()); // write all lines to file
                 
             }
         }
 
-        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)// handle load button
         {
-            if (Config.ItemsBought.Count() != 0)
+            if (Config.ItemsBought.Count() != 0) // if the amount of items is not 0
             {
-                if (clearItems())
+                if (clearItems()) // if cleared all items
                 {
-                    loadFile();
+                    loadFile(); // load from file
                 }
             }
-            else
+            else // if there are no items bought
             {
-                loadFile();
+                loadFile(); // load file anyway
             }
-            updateList();
+            updateList(); // after load file, update display
            
         }
 
 
         void loadFile()
         {
-            loadExp = new Regex(@"\w*:");
-            openFile = new OpenFileDialog();
-            toLoad = new List<string>();
+            loadExp = new Regex(@"\w*:"); // regular expression for "any character any amount of times with a colon after it"
+            openFile = new OpenFileDialog(); // create openFileDialog instance
+            toLoad = new List<string>(); // list of lines in the file that we are loading
 
             Console.WriteLine("loading File!");
-            openFile.Title = "Open Order File";
-            openFile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-            if (openFile.ShowDialog() == DialogResult.OK)
+
+            openFile.Title = "Open Order File"; // title of the dialog box
+            openFile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"; // filter the dialog box
+            if (openFile.ShowDialog() == DialogResult.OK) // if the pressed OK
             {
-                foreach (var i in File.ReadAllLines(openFile.FileName))
+                foreach (var i in File.ReadAllLines(openFile.FileName)) // read all the lines in the file
                 {
-                    toLoad.Add(i);
+                    toLoad.Add(i); // add them to the list
                 }
                    
                 
 
-                foreach (var i in toLoad.ToArray())
+                foreach (var i in toLoad.ToArray()) // for each item in the list
                 {
-                    match = loadExp.Match(i);
-                    if (match.Success)
+                    match = loadExp.Match(i); // apply regular expression to string
+                    if (match.Success) // if found a match
                     {
-                        foreach (var x in Config.Items)
+                        foreach (var x in Config.Items) // for each item
                         {
                             Console.WriteLine();
                             Console.WriteLine("looking for: \"" + match.Groups[0].Value.Substring(0,(match.Groups[0].Value.Length - 1)) + "\"");
                             Console.WriteLine("at: \"" + x.Name + "\"");
 
-                            if (x.Name == match.Groups[0].Value.Substring(0,(match.Groups[0].Value.Length - 1)).ToString())
+                            if (x.Name == match.Groups[0].Value.Substring(0,(match.Groups[0].Value.Length - 1)).ToString()) // if the name of the item is the same as the file (with some formatting)
                             {
-                                Config.ItemsBought.Add(x);
-                                Console.WriteLine("Found! \"" + x.Name + "\" With: \"" + match.Groups[0].Value.Substring(0, (match.Groups[0].Value.Length - 1)) + "\"");
+                                Config.ItemsBought.Add(x); // add it to the items bought list
+                                Console.WriteLine("Found! \"" + x.Name + "\" With: \"" + match.Groups[0].Value.Substring(0, (match.Groups[0].Value.Length - 1)) + "\""); // debug info
                             }
                             else
                             {
@@ -485,9 +474,9 @@ namespace VendingMachineTask
             Console.WriteLine("no longer loading file!");
         }
 
-        private void btnBuy_Click(object sender, EventArgs e)
+        private void btnBuy_Click(object sender, EventArgs e) // buy button handler
         {
-            clearItems();
+            clearItems(); // clear bought items
         }
 
     }
