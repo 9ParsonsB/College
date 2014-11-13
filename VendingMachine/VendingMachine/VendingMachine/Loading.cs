@@ -12,8 +12,6 @@ namespace VendingMachineTask
 {
     public partial class Loading : Form
     {
-        int Progress;
-        int Incriment;
         VendingMachine Sender;
         public Loading(VendingMachine _sender)
         {
@@ -23,23 +21,16 @@ namespace VendingMachineTask
         }
         public void Init()
         {
-            Progress = 0;
-            Incriment = 5;
             timer1.Enabled = true;
             this.Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            //label1.Text = Config.progress.ToString();
 
-            Progress += Incriment;
 
-            if (Progress == 100)
-            {
-                Progress= 0;
-            }
-
-            PbarLoading.Value = Progress;
+            PbarLoading.Value = Config.progress;
 
             if (!(Config.isLoading))
             {

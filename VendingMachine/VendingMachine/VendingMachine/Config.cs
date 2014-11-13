@@ -26,6 +26,7 @@ namespace VendingMachineTask
         public static List<VendingItem> ItemsBought { get; set; }
         public static List<ToolTip> pBoxTip { get; set; }
         public static bool Internet { get; set; }
+        public static int progress { get; set; }
         
 
         public static string User

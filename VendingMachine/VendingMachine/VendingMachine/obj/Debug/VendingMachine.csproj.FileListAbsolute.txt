@@ -19,3 +19,14 @@ C:\Users\MinijackB\Documents\Visual Studio 2013\Projects\College.git\VendingMach
 C:\Users\MinijackB\Documents\Visual Studio 2013\Projects\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.LoginForm.resources
 C:\Users\MinijackB\Documents\Visual Studio 2013\Projects\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Properties.Resources.resources
 C:\Users\MinijackB\Documents\Visual Studio 2013\Projects\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Loading.resources
+W:\College\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe.config
+W:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.exe
+W:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.pdb
+W:\College\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe
+W:\College\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.pdb
+W:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csprojResolveAssemblyReference.cache
+W:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.VendingMachine.resources
+W:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Loading.resources
+W:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.LoginForm.resources
+W:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Properties.Resources.resources
+W:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.GenerateResource.Cache

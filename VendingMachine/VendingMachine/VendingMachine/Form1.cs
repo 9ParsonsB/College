@@ -43,7 +43,6 @@ namespace VendingMachineTask
             
             worker.DoWork += worker_DoWork;
             worker.RunWorkerCompleted += worker_RunWorkerCompleted;
-
             worker.RunWorkerAsync();
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB");
@@ -91,7 +90,13 @@ namespace VendingMachineTask
             }
 
             }
+
+            
+
         }
+
+
+
 
         private void worker_RunWorkerCompleted(object sender,
                                                RunWorkerCompletedEventArgs e)
@@ -118,7 +123,7 @@ namespace VendingMachineTask
 
         public WorkerReturnType Init()
         {
-
+            Config.progress = 0;
 
             List<VendingItem> Items = new List<VendingItem>();
             List<PictureBox> picList = new List<PictureBox>();
@@ -152,7 +157,7 @@ namespace VendingMachineTask
             {
 
                 picList[i].Load(Items[i].URL);
-
+                Config.progress += 10;
                 pBoxTip.Add(new ToolTip());
             }
 
@@ -191,7 +196,7 @@ namespace VendingMachineTask
 
                 }
             }
-
+            Config.progress += 10;
 
             Config.isLoading = false;
 
