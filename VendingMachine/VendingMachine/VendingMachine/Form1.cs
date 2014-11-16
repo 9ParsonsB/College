@@ -382,28 +382,33 @@ namespace VendingMachineTask
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e) // save handler
         {
-            saveFile = new SaveFileDialog(); // create saveFileDialog instance
-            toSave = new List<string>(); // list of lines to save to file
-
-            saveFile.FileName = "Vending Order.txt"; // defualt file name
-            saveFile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"; // filter for save file dialog
-
-            if (saveFile.ShowDialog() == DialogResult.OK) // prompt user for save location, if they press OK then
-            {
-                foreach (var i in Config.ItemsBought) // for each of the items bought
+            if (Config.ItemsBought.Count != 0){
+                saveFile = new SaveFileDialog(); // create saveFileDialog instance
+                toSave = new List<string>(); // list of lines to save to file
+    
+                saveFile.FileName = "Vending Order.txt"; // defualt file name
+                saveFile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"; // filter for save file dialog
+    
+                if (saveFile.ShowDialog() == DialogResult.OK) // prompt user for save location, if they press OK then
                 {
-                    toSave.Add(i.Name + ": " + String.Format("{0:c}",i.Price)); // add it to the list of lines to be wrote to file
+                    foreach (var i in Config.ItemsBought) // for each of the items bought
+                    {
+                        toSave.Add(i.Name + ": " + String.Format("{0:c}",i.Price)); // add it to the list of lines to be wrote to file
+                    }
+    
+    
+    
+                    toSave.Add(""); // empty lines
+                    toSave.Add("");
+                    toSave.Add(String.Format("Cost: £ {0}", String.Format("{0:c}",TotalCost))); // add total cost
+                    toSave.Add(String.Format("Items: {0}", Config.ItemsBought.Count().ToString())); // add number of items
+    
+                    File.WriteAllLines(saveFile.FileName, toSave.ToArray()); // write all lines to file
                 }
-
-
-
-                toSave.Add(""); // empty lines
-                toSave.Add("");
-                toSave.Add(String.Format("Cost: £ {0}", String.Format("{0:c}",TotalCost))); // add total cost
-                toSave.Add(String.Format("Items: {0}", Config.ItemsBought.Count().ToString())); // add number of items
-
-                File.WriteAllLines(saveFile.FileName, toSave.ToArray()); // write all lines to file
-                
+            }
+            else
+            {
+                MessageBox.Show("No items to save!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Stop, MessageBoxDefaultButton.Button1);
             }
         }
 
