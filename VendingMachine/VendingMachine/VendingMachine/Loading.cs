@@ -34,7 +34,7 @@ namespace VendingMachineTask
 
             if (!(Config.isLoading)) // if loading is done
             {
-                Sender.Show(); // show the vending machine form
+                Sender.Show(); // show the vending machine form (for the first time)
                 this.Close(); // close current form
             }
         }
