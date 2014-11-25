@@ -52,6 +52,15 @@
             this.lblCount = new System.Windows.Forms.Label();
             this.lstItems = new System.Windows.Forms.ListView();
             this.btnBuy = new System.Windows.Forms.Button();
+            this.lblPic1 = new System.Windows.Forms.Label();
+            this.lblPic2 = new System.Windows.Forms.Label();
+            this.lblPic3 = new System.Windows.Forms.Label();
+            this.lblPic6 = new System.Windows.Forms.Label();
+            this.lblPic5 = new System.Windows.Forms.Label();
+            this.lblPic4 = new System.Windows.Forms.Label();
+            this.lblPic7 = new System.Windows.Forms.Label();
+            this.lblPic8 = new System.Windows.Forms.Label();
+            this.lblPic9 = new System.Windows.Forms.Label();
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox2)).BeginInit();
@@ -91,7 +100,7 @@
             this.helpToolStripMenuItem});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
-            this.menuBar.Size = new System.Drawing.Size(529, 24);
+            this.menuBar.Size = new System.Drawing.Size(522, 24);
             this.menuBar.TabIndex = 4;
             this.menuBar.Text = "menuStrip1";
             // 
@@ -188,7 +197,7 @@
             // 
             // pBox4
             // 
-            this.pBox4.Location = new System.Drawing.Point(12, 127);
+            this.pBox4.Location = new System.Drawing.Point(12, 140);
             this.pBox4.Name = "pBox4";
             this.pBox4.Size = new System.Drawing.Size(92, 84);
             this.pBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -199,7 +208,7 @@
             // pBox5
             // 
             this.pBox5.InitialImage = null;
-            this.pBox5.Location = new System.Drawing.Point(110, 127);
+            this.pBox5.Location = new System.Drawing.Point(110, 140);
             this.pBox5.Name = "pBox5";
             this.pBox5.Size = new System.Drawing.Size(92, 84);
             this.pBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -209,7 +218,7 @@
             // 
             // pBox6
             // 
-            this.pBox6.Location = new System.Drawing.Point(208, 127);
+            this.pBox6.Location = new System.Drawing.Point(208, 140);
             this.pBox6.Name = "pBox6";
             this.pBox6.Size = new System.Drawing.Size(92, 84);
             this.pBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -219,7 +228,7 @@
             // 
             // pBox7
             // 
-            this.pBox7.Location = new System.Drawing.Point(12, 217);
+            this.pBox7.Location = new System.Drawing.Point(12, 243);
             this.pBox7.Name = "pBox7";
             this.pBox7.Size = new System.Drawing.Size(92, 84);
             this.pBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -229,7 +238,7 @@
             // 
             // pBox8
             // 
-            this.pBox8.Location = new System.Drawing.Point(110, 217);
+            this.pBox8.Location = new System.Drawing.Point(110, 243);
             this.pBox8.Name = "pBox8";
             this.pBox8.Size = new System.Drawing.Size(92, 84);
             this.pBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -239,7 +248,7 @@
             // 
             // pBox9
             // 
-            this.pBox9.Location = new System.Drawing.Point(208, 217);
+            this.pBox9.Location = new System.Drawing.Point(208, 243);
             this.pBox9.Name = "pBox9";
             this.pBox9.Size = new System.Drawing.Size(92, 84);
             this.pBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -272,14 +281,14 @@
             this.lstItems.Location = new System.Drawing.Point(306, 37);
             this.lstItems.MultiSelect = false;
             this.lstItems.Name = "lstItems";
-            this.lstItems.Size = new System.Drawing.Size(127, 264);
+            this.lstItems.Size = new System.Drawing.Size(127, 302);
             this.lstItems.TabIndex = 11;
             this.lstItems.UseCompatibleStateImageBehavior = false;
             this.lstItems.View = System.Windows.Forms.View.Details;
             // 
             // btnBuy
             // 
-            this.btnBuy.Location = new System.Drawing.Point(442, 177);
+            this.btnBuy.Location = new System.Drawing.Point(439, 215);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(75, 124);
             this.btnBuy.TabIndex = 12;
@@ -287,11 +296,101 @@
             this.btnBuy.UseVisualStyleBackColor = true;
             this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
+            // lblPic1
+            // 
+            this.lblPic1.AutoSize = true;
+            this.lblPic1.Location = new System.Drawing.Point(47, 124);
+            this.lblPic1.Name = "lblPic1";
+            this.lblPic1.Size = new System.Drawing.Size(22, 13);
+            this.lblPic1.TabIndex = 13;
+            this.lblPic1.Text = "-----";
+            // 
+            // lblPic2
+            // 
+            this.lblPic2.AutoSize = true;
+            this.lblPic2.Location = new System.Drawing.Point(143, 124);
+            this.lblPic2.Name = "lblPic2";
+            this.lblPic2.Size = new System.Drawing.Size(22, 13);
+            this.lblPic2.TabIndex = 13;
+            this.lblPic2.Text = "-----";
+            // 
+            // lblPic3
+            // 
+            this.lblPic3.AutoSize = true;
+            this.lblPic3.Location = new System.Drawing.Point(243, 124);
+            this.lblPic3.Name = "lblPic3";
+            this.lblPic3.Size = new System.Drawing.Size(22, 13);
+            this.lblPic3.TabIndex = 13;
+            this.lblPic3.Text = "-----";
+            // 
+            // lblPic6
+            // 
+            this.lblPic6.AutoSize = true;
+            this.lblPic6.Location = new System.Drawing.Point(243, 227);
+            this.lblPic6.Name = "lblPic6";
+            this.lblPic6.Size = new System.Drawing.Size(22, 13);
+            this.lblPic6.TabIndex = 14;
+            this.lblPic6.Text = "-----";
+            // 
+            // lblPic5
+            // 
+            this.lblPic5.AutoSize = true;
+            this.lblPic5.Location = new System.Drawing.Point(143, 227);
+            this.lblPic5.Name = "lblPic5";
+            this.lblPic5.Size = new System.Drawing.Size(22, 13);
+            this.lblPic5.TabIndex = 15;
+            this.lblPic5.Text = "-----";
+            // 
+            // lblPic4
+            // 
+            this.lblPic4.AutoSize = true;
+            this.lblPic4.Location = new System.Drawing.Point(47, 227);
+            this.lblPic4.Name = "lblPic4";
+            this.lblPic4.Size = new System.Drawing.Size(22, 13);
+            this.lblPic4.TabIndex = 16;
+            this.lblPic4.Text = "-----";
+            // 
+            // lblPic7
+            // 
+            this.lblPic7.AutoSize = true;
+            this.lblPic7.Location = new System.Drawing.Point(47, 330);
+            this.lblPic7.Name = "lblPic7";
+            this.lblPic7.Size = new System.Drawing.Size(22, 13);
+            this.lblPic7.TabIndex = 16;
+            this.lblPic7.Text = "-----";
+            // 
+            // lblPic8
+            // 
+            this.lblPic8.AutoSize = true;
+            this.lblPic8.Location = new System.Drawing.Point(143, 330);
+            this.lblPic8.Name = "lblPic8";
+            this.lblPic8.Size = new System.Drawing.Size(22, 13);
+            this.lblPic8.TabIndex = 15;
+            this.lblPic8.Text = "-----";
+            // 
+            // lblPic9
+            // 
+            this.lblPic9.AutoSize = true;
+            this.lblPic9.Location = new System.Drawing.Point(243, 330);
+            this.lblPic9.Name = "lblPic9";
+            this.lblPic9.Size = new System.Drawing.Size(22, 13);
+            this.lblPic9.TabIndex = 14;
+            this.lblPic9.Text = "-----";
+            // 
             // VendingMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 319);
+            this.ClientSize = new System.Drawing.Size(522, 351);
+            this.Controls.Add(this.lblPic9);
+            this.Controls.Add(this.lblPic6);
+            this.Controls.Add(this.lblPic8);
+            this.Controls.Add(this.lblPic5);
+            this.Controls.Add(this.lblPic7);
+            this.Controls.Add(this.lblPic4);
+            this.Controls.Add(this.lblPic3);
+            this.Controls.Add(this.lblPic2);
+            this.Controls.Add(this.lblPic1);
             this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.lstItems);
             this.Controls.Add(this.lblCount);
@@ -356,6 +455,15 @@
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.ListView lstItems;
         private System.Windows.Forms.Button btnBuy;
+        private System.Windows.Forms.Label lblPic1;
+        private System.Windows.Forms.Label lblPic2;
+        private System.Windows.Forms.Label lblPic3;
+        private System.Windows.Forms.Label lblPic6;
+        private System.Windows.Forms.Label lblPic5;
+        private System.Windows.Forms.Label lblPic4;
+        private System.Windows.Forms.Label lblPic7;
+        private System.Windows.Forms.Label lblPic8;
+        private System.Windows.Forms.Label lblPic9;
     }
 }
 

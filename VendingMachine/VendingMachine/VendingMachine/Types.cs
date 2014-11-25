@@ -37,4 +37,27 @@ namespace VendingMachineTask
         public List<ToolTip> pBoxTip;
 
     }
+
+    public class TimeoutType
+    {
+        private int _value = 0;
+
+        public int Get()
+        {
+            return _value;
+        }
+
+        public void Add(int amount)
+        {
+            _value += amount;
+        }
+
+        public void Tick()
+        {
+            if (_value > 0)
+            {
+                _value--;
+            }
+        }
+    }
 }

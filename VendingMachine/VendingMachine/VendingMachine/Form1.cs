@@ -174,36 +174,46 @@ namespace VendingMachineTask
             }
 
 
-            for (var i = 0; i < picList.Count(); i++) // loop through the array of pictureboxes
+            for (var i = -1; i < picList.Count(); i++) // loop through the array of pictureboxes
             {
-                switch (i)
+                var x = i + 1;
+                switch (x)
                 {
+                    case 0:
+                        pBox1 = picList[x]; // set each picturebox to each element in the array of pictureboxes
+                        lblPic1.Text = String.Format("{0}", String.Format("{0:c}", Items[x].Price));
+                        break;
                     case 1:
-                        pBox1 = picList[i]; // set each picturebox to each element in the array of pictureboxes
+                        pBox2 = picList[x];
+                        lblPic2.Text = String.Format("{0}", String.Format("{0:c}", Items[x].Price));
                         break;
                     case 2:
-                        pBox2 = picList[i];
+                        pBox3 = picList[x];
+                        lblPic3.Text = String.Format("{0}", String.Format("{0:c}", Items[x].Price));
                         break;
                     case 3:
-                        pBox3 = picList[i];
+                        pBox4 = picList[x];
+                        lblPic4.Text = String.Format("{0}", String.Format("{0:c}", Items[x].Price));
                         break;
                     case 4:
-                        pBox4 = picList[i];
+                        pBox5 = picList[x];
+                        lblPic5.Text = String.Format("{0}", String.Format("{0:c}", Items[x].Price));
                         break;
                     case 5:
-                        pBox5 = picList[i];
+                        pBox6 = picList[x];
+                        lblPic6.Text = String.Format("{0}", String.Format("{0:c}", Items[x].Price));
                         break;
                     case 6:
-                        pBox6 = picList[i];
+                        pBox7 = picList[x];
+                        lblPic7.Text = String.Format("{0}", String.Format("{0:c}", Items[x].Price));
                         break;
                     case 7:
-                        pBox7 = picList[i];
+                        pBox8 = picList[x];
+                        lblPic8.Text = String.Format("{0}", String.Format("{0:c}", Items[x].Price));
                         break;
                     case 8:
-                        pBox8 = picList[i];
-                        break;
-                    case 9:
-                        pBox9 = picList[i];
+                        pBox9 = picList[x];
+                        lblPic9.Text = String.Format("{0}", String.Format("{0:c}", Items[x].Price));
                         break;
 
                 }

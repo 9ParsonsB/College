@@ -27,7 +27,15 @@ namespace VendingMachineTask
         public static List<ToolTip> pBoxTip { get; set; }
         public static bool Internet { get; set; }
         public static int progress { get; set; }
-        
+
+        private static int _Timeout = 0;
+        private static string _User = "root";
+        private static string _Pass = "toor";
+
+        public static int Timeout
+        {
+            get { return _Timeout; }
+        }
 
         public static string User
         {
@@ -38,7 +46,5 @@ namespace VendingMachineTask
             get { return _Pass; }
         }
 
-        private static string _User = "root";
-        private static string _Pass = "toor";
     }
 }

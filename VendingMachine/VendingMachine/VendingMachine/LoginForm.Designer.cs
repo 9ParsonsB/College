@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtUsr = new System.Windows.Forms.TextBox();
             this.txtPswd = new System.Windows.Forms.TextBox();
             this.lblUsr = new System.Windows.Forms.Label();
             this.lblPswd = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.tmrTimeout = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // txtUsr
@@ -80,6 +82,10 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // tmrTimeout
+            // 
+            this.tmrTimeout.Tick += new System.EventHandler(this.tmrTimeout_Tick);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,5 +113,6 @@
         private System.Windows.Forms.Label lblUsr;
         private System.Windows.Forms.Label lblPswd;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Timer tmrTimeout;
     }
 }
