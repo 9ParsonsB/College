@@ -45,8 +45,8 @@ namespace VendingMachineTask
             {
                 if (txtPswd.Text == Config.Pass) // and password
                 {
-
-                    VendingMachine VendingMachine = new VendingMachine(this); // open the vending machine (does not show the form)
+                    VendingMachineTask.Help helpForm = new VendingMachineTask.Help();
+                    VendingMachine VendingMachine = new VendingMachine(this,helpForm); // open the vending machine (does not show the form)
                     this.Hide(); // hide login form
 
                     txtPswd.Text = ""; // reset the username & password feilds
@@ -70,6 +70,22 @@ namespace VendingMachineTask
                 txtPswd.Enabled = true;
                 attempts = 0;
             }
+        }
+
+        private void lblPswd_Click(object sender, EventArgs e)
+        {
+            Help help = new Help();
+            help.Show();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            Config.tempFileLocation = Path.Combine(Path.GetTempPath() + Guid.NewGuid().ToString());
+        }
+
+        private void lblUsr_Click(object sender, EventArgs e)
+        {
+            txtUsr.Text = (Config.tempFileLocation);
         }
     }
 }

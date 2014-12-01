@@ -20,6 +20,7 @@ namespace VendingMachineTask
 
         SaveFileDialog saveFile = new SaveFileDialog();
         OpenFileDialog openFile = new OpenFileDialog();
+        Help help = new Help();
         List<string> toSave = new List<string>();
         List<string> toLoad = new List<string>();
         Regex loadExp;
@@ -29,13 +30,16 @@ namespace VendingMachineTask
         public Loading Loading;
         public Thread loadingThread;
         private readonly BackgroundWorker worker = new BackgroundWorker();
+        VendingMachineTask.Help helpForm;
+        
 
-        public VendingMachine(VendingMachineTask.LoginForm _sender)
+        public VendingMachine(VendingMachineTask.LoginForm _sender, VendingMachineTask.Help _helpForm)
         {
             InitializeComponent();
             Config.isLoading = true;
             Sender = _sender;
             LoadImages(this);
+            helpForm = _helpForm;
 
 
 
@@ -64,8 +68,8 @@ namespace VendingMachineTask
                 Config.ItemsBought = re.ItemsBought;
                 Config.Items = re.Items;
 
-            }//*/
-            catch (System.Net.WebException) // if cannot connect to the internet
+            }
+            catch (System.IO.EndOfStreamException) // if cannot connect to the internet
             {
                 Config.isLoading = false; // stop loading form
                 MessageBox.Show("Error, You MUST be connected to the internet to download content", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Stop, MessageBoxDefaultButton.Button1); // tell user that there is no internet connection
@@ -89,7 +93,7 @@ namespace VendingMachineTask
                 
                 Random Rnd = new Random();
 
-                // choose a random image from windows default pictures and add it as an item
+                // choose a random image from windows default pictures and add it as an item as Items cannot be empty
                 Config.Items.Add(new VendingItem("defualt", 0.0m, "C:/ProgramData/Microsoft/User Account Pictures/Default Pictures/usertile"+ Rnd.Next(10,44).ToString()+".bmp"));
 
                 for (var i = 0; i < (Config.Items.Count); i++) // for each of the items
@@ -218,6 +222,9 @@ namespace VendingMachineTask
 
                 }
             }
+
+            helpForm.init(Config.tempFileLocation);
+
             Config.progress += 10;
 
             Config.isLoading = false; // tell the loading form to stop
@@ -253,7 +260,7 @@ namespace VendingMachineTask
 
             }
 
-            lblCost.Text = String.Format("Cost: £ {0}", String.Format("{0:c}",TotalCost)); // set labels so user knows the total cost & items
+            lblCost.Text = String.Format("Cost: {0}", String.Format("{0:c}",TotalCost)); // set labels so user knows the total cost & items
             lblCount.Text = String.Format("Items: {0}", i.ToString());
 
         }
@@ -410,7 +417,7 @@ namespace VendingMachineTask
     
                     toSave.Add(""); // empty lines
                     toSave.Add("");
-                    toSave.Add(String.Format("Cost: £ {0}", String.Format("{0:c}",TotalCost))); // add total cost
+                    toSave.Add(String.Format("Cost: {0}", String.Format("{0:c}",TotalCost))); // add total cost
                     toSave.Add(String.Format("Items: {0}", Config.ItemsBought.Count().ToString())); // add number of items
     
                     File.WriteAllLines(saveFile.FileName, toSave.ToArray()); // write all lines to file
@@ -493,6 +500,12 @@ namespace VendingMachineTask
         {
             clearItems(); // clear bought items
         }
+
+        private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            helpForm.Show();
+        }
+
 
     }
 }

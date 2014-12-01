@@ -11,7 +11,6 @@ using System.Threading;
 using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
-
 namespace VendingMachineTask
 {
     public class VendingItem

@@ -27,6 +27,7 @@ namespace VendingMachineTask
         public static List<ToolTip> pBoxTip { get; set; }
         public static bool Internet { get; set; }
         public static int progress { get; set; }
+        public static string tempFileLocation {get; set;}
 
         private static int _Timeout = 0;
         private static string _User = "root";

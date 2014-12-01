@@ -73,6 +73,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Loading";
+            this.Load += new System.EventHandler(this.Loading_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

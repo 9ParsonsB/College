@@ -41,3 +41,4 @@ E:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine
 E:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.LoginForm.resources
 E:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Properties.Resources.resources
 E:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.GenerateResource.Cache
+E:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Help.resources

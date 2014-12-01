@@ -62,6 +62,7 @@
             this.lblUsr.Size = new System.Drawing.Size(58, 13);
             this.lblUsr.TabIndex = 2;
             this.lblUsr.Text = "Username:";
+            this.lblUsr.Click += new System.EventHandler(this.lblUsr_Click);
             // 
             // lblPswd
             // 
@@ -71,6 +72,7 @@
             this.lblPswd.Size = new System.Drawing.Size(56, 13);
             this.lblPswd.TabIndex = 3;
             this.lblPswd.Text = "Password:";
+            this.lblPswd.Click += new System.EventHandler(this.lblPswd_Click);
             // 
             // btnLogin
             // 
@@ -101,6 +103,7 @@
             this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
