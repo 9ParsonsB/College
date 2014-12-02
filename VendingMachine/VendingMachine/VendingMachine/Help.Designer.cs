@@ -37,14 +37,14 @@
             this.helpBrowser.Location = new System.Drawing.Point(0, 0);
             this.helpBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.helpBrowser.Name = "helpBrowser";
-            this.helpBrowser.Size = new System.Drawing.Size(284, 262);
+            this.helpBrowser.Size = new System.Drawing.Size(590, 635);
             this.helpBrowser.TabIndex = 0;
             // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(590, 635);
             this.Controls.Add(this.helpBrowser);
             this.MinimizeBox = false;
             this.Name = "Help";

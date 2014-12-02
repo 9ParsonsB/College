@@ -74,8 +74,8 @@ namespace VendingMachineTask
 
         private void lblPswd_Click(object sender, EventArgs e)
         {
-            Help help = new Help();
-            help.Show();
+            //Help help = new Help();
+            //help.Show();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace VendingMachineTask
 
         private void lblUsr_Click(object sender, EventArgs e)
         {
-            txtUsr.Text = (Config.tempFileLocation);
+            //txtUsr.Text = (Config.tempFileLocation);
         }
     }
 }
