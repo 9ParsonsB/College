@@ -10,7 +10,6 @@ using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 using System.IO;
-using System.Text.RegularExpressions;
 
 namespace VendingMachineTask
 {
@@ -51,7 +50,7 @@ namespace VendingMachineTask
 
                     txtPswd.Text = ""; // reset the username & password feilds
                     txtUsr.Text = "";
-                    attempts--;
+                    attempts = 0; // reset attempts count
                     
                 } else { MessageBox.Show("Incorrect password!","Login attempts fail",MessageBoxButtons.OK,MessageBoxIcon.Stop,MessageBoxDefaultButton.Button1); }
             } else  { MessageBox.Show("Incorrect username!","Login attempts fail",MessageBoxButtons.OK,MessageBoxIcon.Stop,MessageBoxDefaultButton.Button1); }
@@ -74,6 +73,7 @@ namespace VendingMachineTask
 
         private void lblPswd_Click(object sender, EventArgs e)
         {
+            // Debug trigger, insert debug code here
             //Help help = new Help();
             //help.Show();
         }
@@ -85,7 +85,7 @@ namespace VendingMachineTask
 
         private void lblUsr_Click(object sender, EventArgs e)
         {
-            //txtUsr.Text = (Config.tempFileLocation);
+            // Debug trigger, insert debug code here
         }
     }
 }

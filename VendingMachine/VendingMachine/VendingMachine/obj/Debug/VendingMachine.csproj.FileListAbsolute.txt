@@ -42,3 +42,15 @@ E:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine
 E:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Properties.Resources.resources
 E:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.GenerateResource.Cache
 E:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Help.resources
+\\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe.config
+\\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.exe
+\\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.pdb
+\\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe
+\\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.pdb
+\\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csprojResolveAssemblyReference.cache
+\\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.VendingMachine.resources
+\\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Help.resources
+\\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Loading.resources
+\\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.LoginForm.resources
+\\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Properties.Resources.resources
+\\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.GenerateResource.Cache

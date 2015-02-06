@@ -12,6 +12,9 @@ namespace VendingMachine
         static void Main()
         {
             VendingMachineTask.Program.Main();
+
+
+
         }
 
     }
