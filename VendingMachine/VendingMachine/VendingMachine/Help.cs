@@ -31,7 +31,7 @@ namespace VendingMachineTask
                 }
                 Directory.CreateDirectory(Config.tempFileLocation);
                 //MessageBox.Show(string.Format(Config.tempFileLocation + "/index.html"));
-                Client.DownloadFile("https://raw.githubusercontent.com/minijack/College/master/VendingMachine/help.html", (Path.Combine(Config.tempFileLocation + "\\index.html")));
+                Client.DownloadFile("https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/help.html", (Path.Combine(Config.tempFileLocation + "\\index.html")));
                 
             }
         }

@@ -31,7 +31,7 @@ namespace VendingMachineTask
         public Thread loadingThread;
         private readonly BackgroundWorker worker = new BackgroundWorker();
         VendingMachineTask.Help helpForm;
-        
+
 
         public VendingMachine(VendingMachineTask.LoginForm _sender, VendingMachineTask.Help _helpForm)
         {
@@ -54,7 +54,7 @@ namespace VendingMachineTask
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB"); // set currency
 
-            
+
         }
 
         private void worker_DoWork(object sender, DoWorkEventArgs e)
@@ -90,23 +90,23 @@ namespace VendingMachineTask
                 Config.picList.Add(pBox8);
                 Config.picList.Add(pBox9);
 
-                
+
                 Random Rnd = new Random();
 
                 // choose a random image from windows default pictures and add it as an item as Items cannot be empty
-                Config.Items.Add(new VendingItem("defualt", 0.0m, "C:/ProgramData/Microsoft/User Account Pictures/Default Pictures/usertile"+ Rnd.Next(10,44).ToString()+".bmp"));
+                Config.Items.Add(new VendingItem("defualt", 0.0m, "C:/ProgramData/Microsoft/User Account Pictures/Default Pictures/usertile" + Rnd.Next(10, 44).ToString() + ".bmp"));
 
                 for (var i = 0; i < (Config.Items.Count); i++) // for each of the items
-            {
+                {
 
-                Config.picList[i].Image = Image.FromFile(Config.Items[i].URL); // add the image
+                    Config.picList[i].Image = Image.FromFile(Config.Items[i].URL); // add the image
 
-                Config.pBoxTip.Add(new ToolTip()); // add the tool tip
+                    Config.pBoxTip.Add(new ToolTip()); // add the tool tip
+                }
+
             }
 
-            }
 
-            
 
         }
 
@@ -147,17 +147,17 @@ namespace VendingMachineTask
 
 
             // add items you can buy to the array, including their price and image location (URL)
-            Items.Add(new VendingItem("Cake", 3.5m, "http://puu.sh/cOaEs/0b6478f1a5.png"));
-            Items.Add(new VendingItem("Potato", 1.24m, "http://puu.sh/cObfS/7cd34d8793.png"));
-            Items.Add(new VendingItem("Bird", 2.8m, "http://puu.sh/cOaCf/7a9526184d.png"));
-            Items.Add(new VendingItem("Mask", 10.8m, "http://puu.sh/cObfb/681eff4371.png"));
-            Items.Add(new VendingItem("Hat", 3.35m, "http://puu.sh/cObdE/847fe8ee84.png"));
-            Items.Add(new VendingItem("Preserver", 2.13m, "http://puu.sh/cOaDC/2be0641566.png"));
-            Items.Add(new VendingItem("Cube", 5.15m, "http://puu.sh/cOaEV/9d6c8f93ab.png"));
-            Items.Add(new VendingItem("Fez", 0.78m, "http://puu.sh/cOaFe/1d07104990.png"));
-            Items.Add(new VendingItem("Heart", 0.25m, "http://puu.sh/cOuHp/059a3fe094.png"));
+            Items.Add(new VendingItem("Cake", 3.5m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/cake.png"));
+            Items.Add(new VendingItem("Potato", 1.24m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/potato.png"));
+            Items.Add(new VendingItem("Bird", 2.8m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/bird.png"));
+            Items.Add(new VendingItem("Mask", 10.8m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/mask.png"));
+            Items.Add(new VendingItem("Hat", 3.35m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/hat.png"));
+            Items.Add(new VendingItem("Preserver", 2.13m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/borealis.png"));
+            Items.Add(new VendingItem("Cube", 5.15m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/cube.png"));
+            Items.Add(new VendingItem("Fez", 0.78m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/fez.png"));
+            Items.Add(new VendingItem("Heart", 0.25m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/heart.png"));
 
-            
+
             // add pictureboxes to temporary array
             picList.Add(pBox1);
             picList.Add(pBox2);
@@ -251,7 +251,7 @@ namespace VendingMachineTask
 
             foreach (VendingItem x in Config.ItemsBought) // for each of the items bought
             {
-                var item = new ListViewItem(new[] { x.Name, String.Format("{0:c}",  x.Price) });
+                var item = new ListViewItem(new[] { x.Name, String.Format("{0:c}", x.Price) });
 
                 lstItems.Items.Add(item); // add the items to the list box
 
@@ -260,7 +260,7 @@ namespace VendingMachineTask
 
             }
 
-            lblCost.Text = String.Format("Cost: {0}", String.Format("{0:c}",TotalCost)); // set labels so user knows the total cost & items
+            lblCost.Text = String.Format("Cost: {0}", String.Format("{0:c}", TotalCost)); // set labels so user knows the total cost & items
             lblCount.Text = String.Format("Items: {0}", i.ToString());
 
         }
@@ -299,7 +299,7 @@ namespace VendingMachineTask
             {
                 int itemIndex = lstItems.SelectedItems[0].Index;
                 Console.WriteLine(itemIndex);
-                
+
                 Console.WriteLine("");
                 Console.WriteLine("---Start Bought Table---");
                 Console.WriteLine("");
@@ -322,8 +322,8 @@ namespace VendingMachineTask
                 Console.WriteLine("");
                 Console.WriteLine("---End Bought Table---");
                 Console.WriteLine("");
-                
-                
+
+
             }
             if (delete != -1) // if we found the correct item to delete
                 Config.ItemsBought.RemoveAt(delete); // remove it from the array
@@ -389,7 +389,7 @@ namespace VendingMachineTask
             if (e.CloseReason == CloseReason.WindowsShutDown) return;
 
             Sender.Show(); // show the login form
-           
+
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e) // handle new order button
@@ -399,27 +399,28 @@ namespace VendingMachineTask
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e) // save handler
         {
-            if (Config.ItemsBought.Count != 0){
+            if (Config.ItemsBought.Count != 0)
+            {
                 saveFile = new SaveFileDialog(); // create saveFileDialog instance
                 toSave = new List<string>(); // list of lines to save to file
-    
+
                 saveFile.FileName = "Vending Order.txt"; // defualt file name
                 saveFile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"; // filter for save file dialog
-    
+
                 if (saveFile.ShowDialog() == DialogResult.OK) // prompt user for save location, if they press OK then
                 {
                     foreach (var i in Config.ItemsBought) // for each of the items bought
                     {
-                        toSave.Add(i.Name + ": " + String.Format("{0:c}",i.Price)); // add it to the list of lines to be wrote to file
+                        toSave.Add(i.Name + ": " + String.Format("{0:c}", i.Price)); // add it to the list of lines to be wrote to file
                     }
-    
-    
-    
+
+
+
                     toSave.Add(""); // empty lines
                     toSave.Add("");
-                    toSave.Add(String.Format("Cost: {0}", String.Format("{0:c}",TotalCost))); // add total cost
+                    toSave.Add(String.Format("Cost: {0}", String.Format("{0:c}", TotalCost))); // add total cost
                     toSave.Add(String.Format("Items: {0}", Config.ItemsBought.Count().ToString())); // add number of items
-    
+
                     File.WriteAllLines(saveFile.FileName, toSave.ToArray()); // write all lines to file
                 }
             }
@@ -443,7 +444,7 @@ namespace VendingMachineTask
                 loadFile(); // load file anyway
             }
             updateList(); // after load file, update display
-           
+
         }
 
 
@@ -463,8 +464,8 @@ namespace VendingMachineTask
                 {
                     toLoad.Add(i); // add them to the list
                 }
-                   
-                
+
+
 
                 foreach (var i in toLoad.ToArray()) // for each item in the list
                 {
@@ -474,10 +475,10 @@ namespace VendingMachineTask
                         foreach (var x in Config.Items) // for each item
                         {
                             Console.WriteLine();
-                            Console.WriteLine("looking for: \"" + match.Groups[0].Value.Substring(0,(match.Groups[0].Value.Length - 1)) + "\"");
+                            Console.WriteLine("looking for: \"" + match.Groups[0].Value.Substring(0, (match.Groups[0].Value.Length - 1)) + "\"");
                             Console.WriteLine("at: \"" + x.Name + "\"");
 
-                            if (x.Name == match.Groups[0].Value.Substring(0,(match.Groups[0].Value.Length - 1)).ToString()) // if the name of the item is the same as the file (with some formatting)
+                            if (x.Name == match.Groups[0].Value.Substring(0, (match.Groups[0].Value.Length - 1)).ToString()) // if the name of the item is the same as the file (with some formatting)
                             {
                                 Config.ItemsBought.Add(x); // add it to the items bought list
                                 Console.WriteLine("Found! \"" + x.Name + "\" With: \"" + match.Groups[0].Value.Substring(0, (match.Groups[0].Value.Length - 1)) + "\""); // debug info
@@ -487,7 +488,7 @@ namespace VendingMachineTask
                                 //Console.WriteLine("Not Found!");
                             }
                         }
-                        
+
                     }
                 }
 
