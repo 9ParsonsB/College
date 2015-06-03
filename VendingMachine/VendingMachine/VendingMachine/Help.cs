@@ -23,9 +23,8 @@ namespace VendingMachineTask
         public void init(string _location)
         {
             WebBrowser helpBrowser = new WebBrowser();
-            helpBrowser.Navigate(new Uri("http://www.google.com"));
+            helpBrowser.Navigate(new Uri("_location"));
 
-            helpBrowser.Navigate("http://www.makeuseof.com/answers/why-do-i-keep-getting-active-x-warnings/");
         }
 
         public Help()

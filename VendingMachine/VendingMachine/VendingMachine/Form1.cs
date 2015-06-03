@@ -49,7 +49,6 @@ namespace VendingMachineTask
 
             // setup background worker
             worker.DoWork += worker_DoWork; // events for background worker
-            worker.RunWorkerCompleted += worker_RunWorkerCompleted;
 
             worker.RunWorkerAsync(); // start worker
 
@@ -64,12 +63,8 @@ namespace VendingMachineTask
             {
 
 
-                WorkerReturnType re = Init();
-
-                Config.picList = re.picList; // set values from return type
-                Config.pBoxTip = re.pBoxTip;
-                Config.ItemsBought = re.ItemsBought;
-                Config.Items = re.Items;
+                Init();
+                
 
             }
             catch (System.IO.EndOfStreamException) // if cannot connect to the internet
@@ -109,29 +104,7 @@ namespace VendingMachineTask
 
             }
 
-
-
         }
-
-
-
-
-        private void worker_RunWorkerCompleted(object sender,
-                                               RunWorkerCompletedEventArgs e)
-        {
-
-            for (var i = 0; i < (Config.Items.Count); i++) // for each of the items
-            {
-
-                Config.pBoxTip[i].SetToolTip(Config.picList[i], Config.Items[i].Name + ": " + string.Format("{0:C}", Config.Items[i].Price)); // set tooltip
-            }
-
-
-            Config.isLoading = false; // stop loadingform
-        }
-
-
-
 
         public void LoadImages(VendingMachine Sender)
         {
@@ -139,7 +112,7 @@ namespace VendingMachineTask
             LoadingForm.Show(); // show loading form
         }
 
-        public WorkerReturnType Init()
+        public void Init()
         {
             Config.progress = 0; // set progress to 0
 
@@ -150,15 +123,15 @@ namespace VendingMachineTask
 
 
             // add items you can buy to the array, including their price and image location (URL)
-            Items.Add(new VendingItem("Cake", 3.5m, "\\\\weston.ac.uk\\home\\SkillsStudents\\WS252652\\Downloads\\College-master (1)\\College-master\\VendingMachine\\VendingMachine\\VendingMachine\\cake.png"));
-            Items.Add(new VendingItem("Potato", 1.24m, "\\\\weston.ac.uk\\home\\SkillsStudents\\WS252652\\Downloads\\College-master (1)\\College-master\\VendingMachine\\VendingMachine\\VendingMachine\\potato.png"));
-            Items.Add(new VendingItem("Bird", 2.8m, "\\\\weston.ac.uk\\home\\SkillsStudents\\WS252652\\Downloads\\College-master (1)\\College-master\\VendingMachine\\VendingMachine\\VendingMachine\\bird.png"));
-            Items.Add(new VendingItem("Mask", 10.8m, "\\\\weston.ac.uk\\home\\SkillsStudents\\WS252652\\Downloads\\College-master (1)\\College-master\\VendingMachine\\VendingMachine\\VendingMachine\\mask.png"));
-            Items.Add(new VendingItem("Hat", 3.35m, "\\\\weston.ac.uk\\home\\SkillsStudents\\WS252652\\Downloads\\College-master (1)\\College-master\\VendingMachine\\VendingMachine\\VendingMachine\\hat.png"));
-            Items.Add(new VendingItem("Preserver", 2.13m, "\\\\weston.ac.uk\\home\\SkillsStudents\\WS252652\\Downloads\\College-master (1)\\College-master\\VendingMachine\\VendingMachine\\VendingMachine\\borealis.png"));
-            Items.Add(new VendingItem("Cube", 5.15m, "\\\\weston.ac.uk\\home\\SkillsStudents\\WS252652\\Downloads\\College-master (1)\\College-master\\VendingMachine\\VendingMachine\\VendingMachine\\cube.png"));
-            Items.Add(new VendingItem("Fez", 0.78m, "\\\\weston.ac.uk\\home\\SkillsStudents\\WS252652\\Downloads\\College-master (1)\\College-master\\VendingMachine\\VendingMachine\\VendingMachine\\fez.png"));
-            Items.Add(new VendingItem("Heart", 0.25m, "\\\\weston.ac.uk\\home\\SkillsStudents\\WS252652\\Downloads\\College-master (1)\\College-master\\VendingMachine\\VendingMachine\\VendingMachine\\heart.png"));
+            Items.Add(new VendingItem("Cake", 3.5m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/cake.png"));
+            Items.Add(new VendingItem("Potato", 1.24m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/potato.png"));
+            Items.Add(new VendingItem("Bird", 2.8m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/bird.png"));
+            Items.Add(new VendingItem("Mask", 10.8m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/mask.png"));
+            Items.Add(new VendingItem("Hat", 3.35m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/hat.png"));
+            Items.Add(new VendingItem("Preserver", 2.13m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/borealis.png"));
+            Items.Add(new VendingItem("Cube", 5.15m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/cube.png"));
+            Items.Add(new VendingItem("Fez", 0.78m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/fez.png"));
+            Items.Add(new VendingItem("Heart", 0.25m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/heart.png"));
 
 
             // add pictureboxes to temporary array
@@ -175,7 +148,7 @@ namespace VendingMachineTask
             for (var i = 0; i < (Items.Count); i++) // for each entry in the item array
             {
                 picList[i].Load(Items[i].URL); // load the image onto the picture box
-                Config.progress += 10; // add to progress (for loadin form)
+                Config.progress += 10; // add to progress (for loading form)
                 pBoxTip.Add(new ToolTip()); // create empty tooltip
             }
 
@@ -225,20 +198,22 @@ namespace VendingMachineTask
                 }
             }
 
-            helpForm.init(Config.tempFileLocation);
-
             Config.progress += 10;
+
+            Config.Items = Items;
+            Config.ItemsBought = ItemsBought;
+            Config.pBoxTip = pBoxTip;
+            Config.picList = picList;
+
+            for (var x = 0; x < (Config.Items.Count); x++) // for each of the items
+            {
+
+                Config.pBoxTip[x].SetToolTip(Config.picList[x], Config.Items[x].Name + ": " + string.Format("{0:C}", Config.Items[x].Price)); // set tooltip
+            }
 
             Config.isLoading = false; // tell the loading form to stop
 
-            WorkerReturnType re = new WorkerReturnType(); // create return type
 
-            re.Items = Items;
-            re.ItemsBought = ItemsBought;
-            re.pBoxTip = pBoxTip;
-            re.picList = picList;
-
-            return re;
         }
 
         private void updateList()
@@ -506,7 +481,7 @@ namespace VendingMachineTask
 
         private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            helpForm.Show();
+            System.Diagnostics.Process.Start("http://overlandgarage.co.uk/help.html");
         }
 
 
