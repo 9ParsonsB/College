@@ -54,15 +54,30 @@ E:\College\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine
 \\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.LoginForm.resources
 \\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Properties.Resources.resources
 \\svr-cs-03\homedrives$\WS252652\Downloads\College.git\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.GenerateResource.Cache
-\\svr-cs-03\homedrives$\WS252652\Downloads\College-master\College-master\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe.config
-\\svr-cs-03\homedrives$\WS252652\Downloads\College-master\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.exe
-\\svr-cs-03\homedrives$\WS252652\Downloads\College-master\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.pdb
-\\svr-cs-03\homedrives$\WS252652\Downloads\College-master\College-master\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe
-\\svr-cs-03\homedrives$\WS252652\Downloads\College-master\College-master\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.pdb
-\\svr-cs-03\homedrives$\WS252652\Downloads\College-master\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csprojResolveAssemblyReference.cache
-\\svr-cs-03\homedrives$\WS252652\Downloads\College-master\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.VendingMachine.resources
-\\svr-cs-03\homedrives$\WS252652\Downloads\College-master\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Help.resources
-\\svr-cs-03\homedrives$\WS252652\Downloads\College-master\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Loading.resources
-\\svr-cs-03\homedrives$\WS252652\Downloads\College-master\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.LoginForm.resources
-\\svr-cs-03\homedrives$\WS252652\Downloads\College-master\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Properties.Resources.resources
-\\svr-cs-03\homedrives$\WS252652\Downloads\College-master\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.GenerateResource.Cache
+\\weston.ac.uk\home\SkillsStudents\WS252652\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe.config
+\\weston.ac.uk\home\SkillsStudents\WS252652\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.exe
+\\weston.ac.uk\home\SkillsStudents\WS252652\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.pdb
+\\weston.ac.uk\home\SkillsStudents\WS252652\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe
+\\weston.ac.uk\home\SkillsStudents\WS252652\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.pdb
+\\weston.ac.uk\home\SkillsStudents\WS252652\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csprojResolveAssemblyReference.cache
+\\weston.ac.uk\home\SkillsStudents\WS252652\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.VendingMachine.resources
+\\weston.ac.uk\home\SkillsStudents\WS252652\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Help.resources
+\\weston.ac.uk\home\SkillsStudents\WS252652\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Loading.resources
+\\weston.ac.uk\home\SkillsStudents\WS252652\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.LoginForm.resources
+\\weston.ac.uk\home\SkillsStudents\WS252652\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Properties.Resources.resources
+\\weston.ac.uk\home\SkillsStudents\WS252652\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.GenerateResource.Cache
+H:\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe.config
+H:\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.exe
+H:\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.pdb
+H:\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csprojResolveAssemblyReference.cache
+H:\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.VendingMachine.resources
+H:\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Help.resources
+H:\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Loading.resources
+H:\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.LoginForm.resources
+H:\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachineTask.Properties.Resources.resources
+H:\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.GenerateResource.Cache
+H:\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe
+H:\Downloads\College-master (1)\College-master\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.pdb
+E:\College-master\VendingMachine\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe.config
+E:\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.exe
+E:\College-master\VendingMachine\VendingMachine\VendingMachine\obj\Debug\VendingMachine.pdb

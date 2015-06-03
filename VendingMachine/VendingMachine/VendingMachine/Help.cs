@@ -22,18 +22,10 @@ namespace VendingMachineTask
 
         public void init(string _location)
         {
-            location = _location;
-            using (WebClient Client = new WebClient())
-            {
-                while ( (Directory.Exists(Config.tempFileLocation)))
-                {
-                    Config.tempFileLocation = Path.Combine(Path.GetTempPath() + Guid.NewGuid().ToString());
-                }
-                Directory.CreateDirectory(Config.tempFileLocation);
-                //MessageBox.Show(string.Format(Config.tempFileLocation + "/index.html"));
-                Client.DownloadFile("https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/help.html", (Path.Combine(Config.tempFileLocation + "\\index.html")));
-                
-            }
+            WebBrowser helpBrowser = new WebBrowser();
+            helpBrowser.Navigate(new Uri("http://www.google.com"));
+
+            helpBrowser.Navigate("http://www.makeuseof.com/answers/why-do-i-keep-getting-active-x-warnings/");
         }
 
         public Help()
@@ -41,10 +33,6 @@ namespace VendingMachineTask
             InitializeComponent();
         }
 
-        private void Help_Load(object sender, EventArgs e)
-        {
-            helpBrowser.Navigate(Config.tempFileLocation + "\\index.html");
-        }
 
 
         protected override void OnFormClosing(FormClosingEventArgs e)

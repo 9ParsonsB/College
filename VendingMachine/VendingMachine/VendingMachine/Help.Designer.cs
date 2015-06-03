@@ -28,36 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.helpBrowser = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
-            // 
-            // helpBrowser
-            // 
-            this.helpBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.helpBrowser.Location = new System.Drawing.Point(0, 0);
-            this.helpBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-            this.helpBrowser.Name = "helpBrowser";
-            this.helpBrowser.Size = new System.Drawing.Size(590, 635);
-            this.helpBrowser.TabIndex = 0;
             // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 635);
-            this.Controls.Add(this.helpBrowser);
             this.MinimizeBox = false;
             this.Name = "Help";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Help";
-            this.Load += new System.EventHandler(this.Help_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.WebBrowser helpBrowser;
     }
 }

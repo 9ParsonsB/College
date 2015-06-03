@@ -15,11 +15,8 @@ namespace VendingMachineTask
 {
     public partial class LoginForm : Form
     {
-        private int iAttempts = 0;
-        private int iMaxAttempts = 2;
-        private string sUserInput;
-        private string sPassInput;
-        private TimeoutType tTimeout = new TimeoutType();
+        private int attempts = 0;
+        private TimeoutType timeout = new TimeoutType();
 
         public LoginForm()
         {
@@ -42,12 +39,10 @@ namespace VendingMachineTask
 
         private void verifyLogin()
         {
-            sUserInput = txtUsr.Text;
-            sPassInput = txtPswd.Text;
-            iAttempts++;
-            if (sUserInput == Config.User) // if username is correct
+            attempts++;
+            if (txtUsr.Text == Config.User) // if username is correct
             {
-                if (sPassInput == Config.Pass) // and password
+                if (txtPswd.Text == Config.Pass) // and password
                 {
                     VendingMachineTask.Help helpForm = new VendingMachineTask.Help();
                     VendingMachine VendingMachine = new VendingMachine(this,helpForm); // open the vending machine (does not show the form)
@@ -55,24 +50,24 @@ namespace VendingMachineTask
 
                     txtPswd.Text = ""; // reset the username & password feilds
                     txtUsr.Text = "";
-                    iAttempts = 0; // reset attempts count
+                    attempts = 0; // reset attempts count
                     
                 } else { MessageBox.Show("Incorrect password!","Login attempts fail",MessageBoxButtons.OK,MessageBoxIcon.Stop,MessageBoxDefaultButton.Button1); }
             } else  { MessageBox.Show("Incorrect username!","Login attempts fail",MessageBoxButtons.OK,MessageBoxIcon.Stop,MessageBoxDefaultButton.Button1); }
-            if (iAttempts > iMaxAttempts)
+            if (attempts > 2)
             {
                 txtPswd.Enabled = false;
-                tTimeout.Add(5);
+                timeout.Add(5);
             }
         }
 
         private void tmrTimeout_Tick(object sender, EventArgs e)
         {
-            tTimeout.Tick();
-            if (tTimeout.Get() == 0)
+            timeout.Tick();
+            if (timeout.Get() == 0)
             {
                 txtPswd.Enabled = true;
-                iAttempts = 0;
+                attempts = 0;
             }
         }
 
