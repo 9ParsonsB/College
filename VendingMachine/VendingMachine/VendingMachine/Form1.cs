@@ -123,15 +123,15 @@ namespace VendingMachineTask
 
 
             // add items you can buy to the array, including their price and image location (URL)
-            Items.Add(new VendingItem("Cake", 3.5m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/cake.png"));
-            Items.Add(new VendingItem("Potato", 1.24m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/potato.png"));
-            Items.Add(new VendingItem("Bird", 2.8m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/bird.png"));
-            Items.Add(new VendingItem("Mask", 10.8m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/mask.png"));
-            Items.Add(new VendingItem("Hat", 3.35m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/hat.png"));
-            Items.Add(new VendingItem("Preserver", 2.13m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/borealis.png"));
-            Items.Add(new VendingItem("Cube", 5.15m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/cube.png"));
-            Items.Add(new VendingItem("Fez", 0.78m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/fez.png"));
-            Items.Add(new VendingItem("Heart", 0.25m, "https://raw.githubusercontent.com/minijack/College/master/VendingMachine/Assests/heart.png"));
+            Items.Add(new VendingItem("Cake", 3.5m, "http://i.imgur.com/3BaHxoM.png"));
+            Items.Add(new VendingItem("Potato", 1.24m, "http://i.imgur.com/IwFjSJE.png"));
+            Items.Add(new VendingItem("Bird", 2.8m, "http://i.imgur.com/2n9GsPu.png"));
+            Items.Add(new VendingItem("Mask", 10.8m, "http://i.imgur.com/UXM9Smu.png"));
+            Items.Add(new VendingItem("Hat", 3.35m, "http://i.imgur.com/4ekjLZY.png"));
+            Items.Add(new VendingItem("Preserver", 2.13m, "http://i.imgur.com/FEldWzB.png"));
+            Items.Add(new VendingItem("Cube", 5.15m, "http://i.imgur.com/9mdpDhQ.png"));
+            Items.Add(new VendingItem("Fez", 0.78m, "http://i.imgur.com/kOBNyz2.png"));
+            Items.Add(new VendingItem("Heart", 0.25m, "http://i.imgur.com/3AudOnk.png"));
 
 
             // add pictureboxes to temporary array
